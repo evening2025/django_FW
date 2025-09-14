@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,16 +83,28 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }git 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.mysql",
+#         "NAME": "django",
+#         "USER": "demo",
+#         "PASSWORD": "redhat@123",
+#         "HOST": "192.168.48.190",
+#         "PORT": "3306",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "django",
-        "USER": "demo",
-        "PASSWORD": "redhat@123",
-        "HOST": "192.168.48.190",
-        "PORT": "3306",
+        'default': {
+            'ENGINE': os.getenv('DATABASE_ENGINE'),
+            'NAME': os.getenv('DATABASE_NAME'),
+            'USER': os.getenv('DATABASE_USER'),
+            'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+            'HOST': os.getenv('DATABASE_HOST'),
+            'PORT': os.getenv('DATABASE_PORT'),
+        }
     }
-}
+
 
 
 # Password validation
