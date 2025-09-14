@@ -83,16 +83,6 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #     }
 # }git 
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.mysql",
-#         "NAME": "django",
-#         "USER": "demo",
-#         "PASSWORD": "redhat@123",
-#         "HOST": "192.168.48.190",
-#         "PORT": "3306",
-#     }
-# }
 
 DATABASES = {
         'default': {
