@@ -1,2 +1,4 @@
-env
+env/virtual
 .env
+test.py
+.envs
