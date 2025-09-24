@@ -17,16 +17,16 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-    - name: my test
+    - name: test
       run: |
         echo "I am testing phase"
   release:
     runs-on: ubuntu-latest
     steps:
-    - name: my release 
+    - name: release 
       run: echo " i am release"
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: my deploy
+    - name: deploy
       run: echo "i am deploy phase"
